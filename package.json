@@ -1,0 +1,19 @@
+{
+  "name": "tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": " tailwindcss -i ./src/input.css -o ./public/style.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "@preline/dropdown": "^2.1.0",
+    "apexcharts": "^3.48.0",
+    "flowbite": "^2.3.0"
+  }
+}

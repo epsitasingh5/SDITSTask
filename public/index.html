@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+
+</head>
+           
+
+            <body class="bg-gray-200 h-[1210px]">
+              
+            <span
+            class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
+            onclick="openSidebar()"
+          >
+          <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
+          </span>
+          <div
+            class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-slate-700 "
+          >
+            <div class="text-white text-xl ml-4">
+              <div class="p-2.5 mt-1 flex items-center">
+                <img src="g.png" width="40" class="rounded-full">
+                <h1 class="font-bold text-white text-[15px] ml-3">Gurukul ERP</h1>
+                <i
+                  class="bi bi-x cursor-pointer ml-28 lg:hidden"
+                  onclick="openSidebar()"
+                ></i>
+              </div>
+              <div class="my-2 bg-gray-400 h-[1px]"></div>
+            </div>
+           
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+              <i class="bi bi-house-door-fill fill-white"></i>
+              <span class="text-[15px] ml-4 text-white font-sans">Dashboard</span>
+            </div>
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+
+              <span class="text-[15px] ml-4 text-white font-sans font-medium">Admissions</span>
+            </div>
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+              <span class="text-[15px] ml-4 text-white font-sans">Students</span>
+            </div>
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+              <span class="text-[15px] ml-4 text-white font-sans">Fee & Payments</span>
+            </div>
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+              <span class="text-[15px] ml-4 text-white font-sans">Time Table</span>
+            </div>
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+            <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+
+              <span class="text-[15px] ml-4 text-white font-sans">Quiz</span>
+            </div>
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+
+              <span class="text-[15px] ml-4 text-white font-sans">Results</span>
+            </div>
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+            <i class="fa fa-university" aria-hidden="true"></i>
+
+              <span class="text-[15px] ml-4 text-white font-sans">Departments</span>
+            </div>
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+            <i class="fa fa-bell-o" aria-hidden="true"></i>
+
+              <span class="text-[15px] ml-4 text-white font-sans">Notifications</span>
+            </div>
+            <div
+              class="p-2.5 mt-3 flex ml-4 items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+            <i class="fa fa-cog" aria-hidden="true"></i>
+
+              <span class="text-[15px] ml-4 text-white font-sans">Settings</span>
+            </div>
+            <div class="my-4 bg-gray-500 h-[1px]"></div>
+            <div
+              class="p-2.5 mt-3 ml-4 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+              onclick="dropdown()"
+            >
+              <i class="bi bi-chat-left-text-fill"></i>
+              <div class="flex justify-between w-full items-center">
+                <span class="text-[15px] ml-4 text-white font-sans">Chatbox</span>
+                <span class="text-sm rotate-180" id="arrow">
+                  <i class="bi bi-chevron-down"></i>
+                </span>
+              </div>
+            </div>
+            <div
+              class="text-left text-sm mt-2 ml-4 w-4/5 mx-auto text-white font-sans"
+              id="submenu"
+            >
+              <h1 class="cursor-pointer p-2 hover:slate-400 rounded-md mt-1">
+                Social
+              </h1>
+              <h1 class="cursor-pointer p-2 hover:slate-400 rounded-md mt-1">
+                Personal
+              </h1>
+              <h1 class="cursor-pointer p-2 hover:slate-400 rounded-md mt-1">
+                Friends
+              </h1>
+            </div>
+            <div
+              class="p-2.5 mt-3 ml-4  flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-slate-400 text-white"
+            >
+              <i class="bi bi-box-arrow-in-right"></i>
+              <span class="text-[15px] ml-4 text-white font-sans">Logout</span>
+     
+            </div>
+          </div>
+          
+      
+          <script type="text/javascript">
+            function dropdown() {
+              document.querySelector("#submenu").classList.toggle("hidden");
+              document.querySelector("#arrow").classList.toggle("rotate-0");
+            }
+            dropdown();
+      
+            function openSidebar() {
+              document.querySelector(".sidebar").classList.toggle("hidden");
+            }
+          </script>
+          </div>
+          <div class="pl-[330px] pt-4">
+           <header class="flex box-content border-white  bg-white w-[1160px] h-20  shadow-xl sm:p-0 rounded-xl ">
+            <div class="navbar flex justify-between items-center p-5 pr-24">
+              <div class="hamburger pb-0 pr-2">
+                <i class="fa fa-bars" aria-hidden="true" ></i>
+                </div>
+                <span class=" text-black font-bold text-2xl">Dashboard</span>
+              </div>
+            
+          <form class="flex pr-4">
+          <div class="pt-5"><div class=" border-l w-7 py-2 border-t border-b bg-gray-200 border-black items-center pl-2 text-gray-400"> <i class="fa fa-search" aria-hidden="true"></i></div></div>
+            <div class=" text-gray-400 focus-within:text-gray-400 focus-within:underline pt-5 ">
+                <input class="  py-2 w-[710px] border  border-l-slate-200 bg-gray-200  placeholder:text-black" type="text" placeholder= " Search here">
+            </div>
+
+        </form>
+      
+
+  
+       
+       <span class="pt-5"><img src="bell-removebg-preview.png" class="size-10"></span>
+       <div
+       class="pt-5 pl-3"
+     >
+       <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"  type="button"> <img src="PngItem_1284293.png" width="40">
+       </button>
+       
+       <!-- Dropdown menu -->
+       <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+           <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+             <li>
+               <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+             </li>
+             <li>
+               <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+             </li>
+             <li>
+               <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+             </li>
+             <li>
+               <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+             </li>
+           </ul>
+       </div>
+ 
+</div>
+  
+      
+    </div>
+           </header>
+           
+          <main>
+           
+            <div class="ml-10 mt-6  pl-[295px]">        
+          <div class="flex items-stretch mt-2 ml-0">
+            <div class="flex space-x-6 pt-5">
+              
+              <div class="border-white border rounded-xl  shadow-xl sm:p-6 bg-white w-[270px] h-[140px] pl-10 font-bold justify-center pt-6 ">
+                <img src="s2-removebg-preview (1).png" class="size-9 ">
+              
+     
+                <span class="text-gray-500 pl-0 justify-items-center pt-3">Students</SPAN><div class="text-4xl pl-0 pb-6  text-black">12478</div></span>
+              </div>
+              <div class="border-white border rounded-xl  shadow-xl sm:p-6 bg-white w-[270px] h-[140px] pl-10 font-bold justify-center pt-6 ">
+                <img src="teacher_6621964-removebg-preview.png" class="size-9 ">
+                
+
+                <span class="text-gray-500 pl-0 justify-items-center pt-3">Teachers</SPAN><div class="text-4xl pl-0 pb-6  text-black">478</div></span>
+              </div>
+              <div class="border-white border rounded-xl  shadow-xl sm:p-6 bg-white w-[270px] h-[140px] pl-10 font-bold justify-center pt-6 ">
+                <img src="177-1775876_involvement-of-parents-icon-removebg-preview.png" class="size-9 ">
+                
+
+                <span class="text-gray-500 pl-0 justify-items-center pt-3">Parents</SPAN><div class="text-4xl pl-0 pb-6  text-black">8908</div></span>
+              </div>
+              <div class="border-white border rounded-xl  shadow-xl sm:p-6 bg-white w-[270px] h-[140px] pl-10 font-bold justify-center pt-6 ">
+                <img src="dollar-removebg-preview.png" class="size-9 ">
+                
+
+                <span class="text-gray-500 pl-0 justify-items-center pt-3">Earnings</SPAN><div class="text-4xl pl-0 pb-6  text-black">623.9M</div></span>
+              </div>
+            </div>
+    
+          </div>
+          </div><br><br>  
+         
+            
+
+
+          
+          <div class="flex-col">
+          <div class=" flex ml-10 space-x-7  mb-4 md:pl-[295px]">
+            
+            <div class="flex flex-col items-center w-full max-w-screen-md p-6 pb-6 h-[420px] bg-white rounded-lg shadow-xl sm:p-8">
+                <h2 class="text-xl font-semibold pb-2">TOTAL EARNINGS</h2>
+                <form class="mx-8">
+   
+                  <select id="countries" class="bg-red-100 border border-red-600 font-semibold text-black text-lg rounded-lg focus:ring-red-600 focus:border-red-600 block w-[95px] p-2.5 py-1 dark:bg-red-600 dark:border-red-600 dark:placeholder-red-600 dark:text-white dark:focus:ring-red-600 dark:focus:border-red-600 border-red-600">
+                    <option selected>2023</option>
+                    <option value="US">2022</option>
+                    <option value="CA">2021</option>
+                    <option value="FR">2020</option>
+                  </select>
+                       </form>
+  <br><br>
+    
+                <div class="flex items-end flex-grow w-full mt-2 space-x-2 sm:space-x-3">
+                    <div class="relative flex flex-col sm:items-center flex-grow pb-5 group ">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">37K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-36 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-16 rounded-t-xl bg-yellow-400"></div>	
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Jan</span>
+                    </div>
+                    <div class="relative flex flex-col sm:items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">45K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-28 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-20 rounded-t-xl bg-yellow-400"></div>	
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Feb</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">47K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-20 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-10 rounded-t-xl bg-yellow-400"></div>
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Mar</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">50K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-24 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-10 rounded-t-xl bg-yellow-400"></div>	
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Apr</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">47K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-8 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-16 rounded-t-xl bg-yellow-400"></div>		
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">May</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">55K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-28 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-36 rounded-t-xl bg-yellow-400"></div>
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Jun</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">60K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-48 rounded-t-xl bg-green-950"></div>
+                            <div class="relative flex justify-center flex-grow h-40 rounded-t-xl bg-yellow-400"></div>
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Jul</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">57K</span>
+                        <div class="flex items-end w-5">
+                            <div class="relative flex justify-center flex-grow h-16 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-24 rounded-t-xl bg-yellow-400"></div>
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Aug</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">67K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-32 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-14 rounded-t-xl bg-yellow-400"></div>
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Sep</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">65K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-28 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow rounded-t-xl bg-yellow-400 h-24"></div>
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Oct</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">70K</span>
+                        <div class="flex items-end w-5">
+                            
+                            <div class="relative flex justify-center flex-grow h-20 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-16 rounded-t-xl bg-yellow-400"></div>
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Nov</span>
+                    </div>
+                    <div class="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span class="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">75K</span>
+                        <div class="flex items-end w-5">
+                           
+                            <div class="relative flex justify-center flex-grow h-20 rounded-t-xl bg-black"></div>
+                            <div class="relative flex justify-center flex-grow h-32 rounded-t-xl bg-yellow-400"></div>
+                        </div>
+                        <span class="absolute bottom-0 text-xs font-bold">Dec</span>
+                    </div>
+                </div>
+                <div class="flex w-full mt-3">
+                    <div class="flex items-center ml-auto">
+                        <span class="block w-2 h-2 rounded-md bg-black"></span>
+                        <span class="ml-1 text-xs font-medium">Earnings</span>
+                    </div>
+                    <div class="flex items-center ml-4">
+                        <span class="block w-2  h-2 rounded-md bg-yellow-400"></span>
+                        <span class="ml-1 text-xs font-medium">Expense</span>
+                    </div>
+                    <div class="flex items-center ml-4">
+                       
+                        <span class="ml-1 text-xs font-extrabold">...</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Component End  -->
+         
+          <div class=" items-center w-[355px] max-w-screen-md p-4 pb-6 h-[420px] bg-white rounded-lg shadow-xl sm:p-8">
+            <span class="text-xl font-bold">Events Calander</span>
+            <div class="flex space-x-2 pt-3 pb-3">
+            <div class="  w-[180px] max-w-screen-md h-[82px] bg-gray-100 rounded-lg sm:p-2">
+              <div class=" flex  sm:p-2">
+              <span class="block w-1  h-1  rounded-md bg-blue-600"></span>
+              <span class="ml-1 text-xs text-gray-500 font-semibold">23 Feb 2024</span>  
+              </div>
+              <h3 class="text-sm font-bold pl-2">College</h3>
+              <h3 class="text-sm font-bold pl-2">Annual function</h3>
+             
+             </div>
+             
+          <div class=" w-[180px] max-w-screen-md p-3 pb-3 h-[82px] bg-gray-100 rounded-lg  sm:p-2">
+            <div class=" flex  sm:p-2">
+              <span class="block w-1  h-1  rounded-md bg-red-600"></span>
+              <span class="ml-1 text-xs text-gray-500 font-semibold">8 Jan 2024</span>  
+              </div>
+              <h3 class="text-sm font-bold pl-2">Sports</h3>
+              <h3 class="text-sm font-bold pl-2">Competiton</h3>
+             
+             </div>
+          </div>
+          
+          <div class="items-center w-[290px] max-w-screen-md p-3 pb-3 h-[230px] bg-gray-100 rounded-lg  sm:p-8">
+          <div class="table text-xs">
+            <div class="table-caption text-sm font-bold justify-center pb-4">April 2024</div>
+            <div class="table-header-group">
+              <div class="table-cell text-gray-500 font-semibold font-sans pr-2">SUN</div>
+              <div class="table-cell text-gray-500 font-semibold font-sans  pr-2">MON</div>
+              <div class="table-cell text-gray-500 font-semibold font-sans  pr-2">TUE</div>
+              <div class="table-cell text-gray-500 font-semibold font-sans  pr-2">WED</div>
+              <div class="table-cell text-gray-500 font-semibold font-sans  pr-2">THUS</div>
+              <div class="table-cell text-gray-500 font-semibold font-sans  pr-2">FRI</div>
+              <div class="table-cell text-gray-500 font-semibold font-sans">SAT</div>
+
+            </div><br>
+            <div class="table-column-group inline">
+              <div class="table-colum">One Column</div>
+              <div class="table-colum ">Two Column</div>
+              <div class="table-colum ">One Column</div>
+              <div class="table-colum ">Two Column</div>
+              <div class="table-colum ">One Column</div>
+              <div class="table-colum ">Two Column</div>
+              <div class="table-colum ">Two Column</div>
+            </div>
+            <div class="table-row-group font-medium">
+              <div class="table-row">
+                <div class="table-cell pb-2">1</div>
+                <div class="table-cell">2</div>
+                <div class="table-cell">3</div>
+                <div class="table-cell">4</div>
+                <div class="table-cell">5</div>
+                <div class="table-cell">6</div>
+                <div class="table-cell">7</div>
+              </div>
+              <div class="table-row inline">
+                <div class="table-cell pb-2">8</div>
+                <div class="table-cell">9</div>
+                <div class="table-cell">10</div>
+                <div class="table-cell">11</div>
+                <div class="table-cell">12</div>
+                <div class="table-cell">13</div>
+                <div class="table-cell">14</div>
+
+                
+              </div>
+              <div class="table-row">
+                <div class="table-cell pb-2">15</div>
+                <div class="table-cell">16</div>
+                <div class="table-cell">17</div>
+                <div class="table-cell">18</div>
+                <div class="table-cell">19</div>
+                <div class="table-cell">20</div>
+                <div class="table-cell">21</div>
+
+                
+              </div>
+              <div class="table-row">
+                <div class="table-cell pb-2">22</div>
+                <div class="table-cell">23</div>
+                <div class="table-cell">24</div>
+                <div class="table-cell">25</div>
+                <div class="table-cell">26</div>
+                <div class="table-cell">27</div>
+                <div class="table-cell">28</div>
+
+                
+              </div>
+            </div>
+            <div class="table-footer-group">
+              <div class="table-cell">29</div>
+              <div class="table-cell">30</div>
+              <div class="table-cell text-gray-100 ">1</div>
+              <div class="table-cell text-gray-100">2</div>
+              <div class="table-cell text-gray-100">3</div>
+              <div class="table-cell text-gray-100">4</div>
+              <div class="table-cell text-gray-100">5</div>
+              
+            </div>
+          </div>
+          
+        </div>
+        </div>
+        </div>
+        
+        <div class="pl-[340px] pt-6 space-x-8 flex">
+        <div class="box-content bg-white border-white sm:w-[720px] sm:h-[310px] rounded-lg shadow-xl sm:p-8">
+
+        <h1 class="font-bold text-lg pb-4">Top Performer</h1>
+        <div class="pb-4"><div class="my-4 bg-gray-500 h-[1px] "></div></div>
+        <div class="table-row">
+          <div class="table-cell pb-2 pr-7 text-gray-500">Photo</div>
+          <div class="table-cell pr-44 text-gray-500">Name</div>
+          <div class="table-cell pr-12 text-gray-500">Course</div>
+          <div class="table-cell pr-12 pl-2 text-gray-500">Branch</div>
+          <div class="table-cell text-gray-500 pr-14">Sem </div>
+         
+          <div class="table-cell text-gray-500">Mark</div>
+         
+
+          
+        </div>
+         <div class="flex space-x-9 pt-2"><span class=""><img src="pic.png" width="30"></span>
+          <span class="pr-24 font-semibold">Shiya Pandey</span> <span class="pr-6">B.Tech</span><span class="pr-7">CSE</span><span>4th Sem</span><span>9.1 cgpa</span></div>
+          <div class="pb-2"><div class="my-4 bg-gray-300 h-[1px] "></div></div>
+          <div class="flex space-x-9 pt-2"><span class=""><img src="PngItem_4042710.png" width="30"></span>
+            <span class="pr-[104px] font-semibold">Tushar Patel</span> <span class="pr-8">MBA</span><span class="pr-7">CSE</span><span>2nd Sem</span><span>8.0 cgpa</span></div> 
+            <div class="pb-2"><div class="my-4 bg-gray-300 h-[1px] "></div></div>
+            <div class="flex space-x-9 pt-2"><span class=""><img src="AYA.PNG" width="30"></span>
+              <span class="pr-[74px] font-semibold">Ayantika Sharma</span> <span class="pr-8">MCA</span><span class="pr-7">CSE</span><span>3rd Sem</span><span>7.89 cgpa</span></div>
+              
+          </div>
+          
+        <div class="box-content bg-white border-white w-[260px] sm:h-[310px] rounded-lg shadow-xl sm:p-8">
+          <div class="flex space-x-36 ">
+          <span class="font-bold text-lg pb-4">Attendance</span>
+          <span class="text-gray-300 text-3xl">...</span>
+          </div>
+          <div class="pb-4"><div class="my-4 bg-gray-500 h-[1px] "></div></div>
+          <div class="font-semibold">Teachers</div>
+          <div class="text-gray-500">95%</div>
+          <div class="w-[250px] ... h-2.5 rounded-r-lg bg-yellow-400"></div><br><br>
+          <div class="font-semibold">Students</div>
+          <div class="text-gray-500">75%</div>
+          <div class="w-[200px] ... h-2.5 rounded-r-lg bg-black"></div>
+        
+            
+        </div>
+        </div>
+        </div>
+        </body>
+      </html>
+
